@@ -5,7 +5,13 @@ exports.getCrearProducto = (req, res) => {
 };
 
 exports.postCrearProducto = (req, res) => {
-    const producto = new Producto(req.body.nombreproducto);
+
+    const nombre = req.body.nombre;
+    const urlImagen = req.body.urlImagen;
+    const precio = req.body.precio;
+    const descripcion = req.body.descripcion;
+
+    const producto = new Producto(nombre, urlImagen, descripcion, precio);
 
     producto.save();
 
