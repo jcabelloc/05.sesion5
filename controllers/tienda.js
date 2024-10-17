@@ -31,3 +31,10 @@ exports.getCarrito = (req, res, next) => {
       titulo: 'Mi Carrito'
     });
   };
+
+exports.getPedidos = (req, res, next) => {
+res.render('tienda/pedidos', {
+    path: '/pedidos',
+    titulo: 'Mis Pedidos'
+});
+};
