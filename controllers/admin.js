@@ -12,16 +12,16 @@ exports.postCrearProducto = (req, res) => {
     res.redirect('/')
 };
 
+
 exports.getProductos = (req, res) => {
     let productos = [];
     Producto.fetchAll(productosObtenidos => {
-        console.log(productosObtenidos);
         productos = productosObtenidos;
 
-        res.render('tienda/lista-productos', {
+        res.render('admin/productos', {
             prods: productos,
-            titulo: "La Tienda", 
-            path: "/"
+            titulo: "Administracion de Productos", 
+            path: "/admin/productos"
         });
     })
 
