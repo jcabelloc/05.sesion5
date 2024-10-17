@@ -13,11 +13,17 @@ exports.postCrearProducto = (req, res) => {
 };
 
 exports.getProductos = (req, res) => {
-    const productos = Producto.fetchAll(); 
+    let productos = [];
+    Producto.fetchAll(productosObtenidos => {
+        console.log(productosObtenidos);
+        productos = productosObtenidos;
 
-    res.render('tienda', {
-        prods: productos,
-        titulo: "La Tienda", 
-        path: "/"
-    });
+        res.render('tienda', {
+            prods: productos,
+            titulo: "La Tienda", 
+            path: "/"
+        });
+    })
+
+
 };
