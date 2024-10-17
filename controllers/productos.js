@@ -1,7 +1,7 @@
 const Producto = require('../models/producto');
 
 exports.getCrearProducto = (req, res) => {
-    res.render('crear-producto', { titulo: 'Crear Producto', path: '/admin/crear-producto' })
+    res.render('admin/crear-producto', { titulo: 'Crear Producto', path: '/admin/crear-producto' })
 };
 
 exports.postCrearProducto = (req, res) => {
@@ -18,7 +18,7 @@ exports.getProductos = (req, res) => {
         console.log(productosObtenidos);
         productos = productosObtenidos;
 
-        res.render('tienda', {
+        res.render('tienda/lista-productos', {
             prods: productos,
             titulo: "La Tienda", 
             path: "/"
