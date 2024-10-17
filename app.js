@@ -1,5 +1,7 @@
 const path = require('path');
 
+const Persona = require('./models/persona')
+
 const express = require('express');
 const bodyParser = require('body-parser')
 
@@ -29,4 +31,6 @@ app.use((req, res, next) => {
 
 app.use(errorController.get404)
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log('Mi aplicacion permite el uso de los siguientes tipos de doc: ', Persona.tiposDeDocumento())
+});
